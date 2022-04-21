@@ -7,7 +7,7 @@ namespace ProjetoMoradia.Models
         public Casa(string endereco, int cep, double tamanhoEmMetros, int quantidadeDeBanheiros, int quantidadeDeQuartos,
                     bool comQuintal) : base(endereco, cep, tamanhoEmMetros, quantidadeDeBanheiros, quantidadeDeQuartos)
         {
-            SetComQuintal(comQuintal);
+            ComQuintal = comQuintal;
         }
 
         public void SetComQuintal(bool comQuintal)
@@ -23,8 +23,8 @@ namespace ProjetoMoradia.Models
         public override double CalcularValor()
         {
             var valor = 0.0;
-            valor = (GetTamanhoEmMetros() * 35) + (GetQuantidadeDeQuartos() * 10) + (GetQuantidadeDeBanheiros() * 5);
-            if (GetComQuintal() == true)
+            valor = (TamanhoEmMetros * 35) + (QuantidadeDeQuartos * 10) + (QuantidadeDeBanheiros * 5);
+            if (ComQuintal == true)
                 valor = valor * 1.1;
             return valor;
         }

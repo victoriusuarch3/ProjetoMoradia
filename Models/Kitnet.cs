@@ -10,7 +10,7 @@ namespace ProjetoMoradia.Models
         public override double CalcularValor()
         {
             var valor = 0.0;
-            valor = GetTamanhoEmMetros() * 30;
+            valor = TamanhoEmMetros * 30;
             return valor;
         }
     }

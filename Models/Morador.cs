@@ -6,11 +6,11 @@ namespace ProjetoMoradia.Models
         private string Cpf { get; set; }
         private DateTime DataNascimento { get; set; }
 
-        public Morador(string nome, string cpf, DateTime dataNascimento)
+        public Morador(string nome, string cpf, string dataNascimento)
         {
             Nome = nome;
             Cpf = cpf;
-            DataNascimento = dataNascimento;
+            SetDataNascimento(dataNascimento);
         }
 
         public void SetNome(string nome)
@@ -33,9 +33,9 @@ namespace ProjetoMoradia.Models
             return Cpf;
         }
 
-        public void SetDataNascimento(DateTime dataNascimento)
+        public void SetDataNascimento(string dataNascimento)
         {
-            DataNascimento = dataNascimento;
+            DataNascimento = DateTime.Parse(dataNascimento);
         }
 
         public DateTime GetDataDeNascimento()

@@ -9,8 +9,8 @@ namespace ProjetoMoradia.Models
                            int andar, double valorCondominio) : base(endereco, cep, tamanhoEmMetros, quantidadeDeBanheiros,
                            quantidadeDeQuartos)
         {
-            SetAndar(andar);
-            SetValorCondominio(valorCondominio);
+            Andar = andar;
+            ValorCondominio = valorCondominio;
         }
 
         public void SetAndar(int andar)
@@ -36,7 +36,7 @@ namespace ProjetoMoradia.Models
         public override double CalcularValor()
         {
             var valor = 0.0;
-            valor = (GetTamanhoEmMetros() * 40) + (GetQuantidadeDeQuartos() * 10) + (GetQuantidadeDeBanheiros() * 5) + GetValorCondominio();
+            valor = (TamanhoEmMetros * 40) + (QuantidadeDeQuartos * 10) + (QuantidadeDeBanheiros * 5) + ValorCondominio;
             return valor;
         }
     }

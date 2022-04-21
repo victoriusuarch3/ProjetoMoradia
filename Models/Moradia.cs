@@ -4,19 +4,19 @@ namespace ProjetoMoradia.Models
     {
         private string Endereco { get; set; }
         private int Cep { get; set; }
-        private double TamanhoEmMetros { get; set; }
-        private int QuantidadeDeBanheiros { get; set; }
-        private int QuantidadeDeQuartos { get; set; }
+        protected double TamanhoEmMetros { get; set; }
+        protected int QuantidadeDeBanheiros { get; set; }
+        protected int QuantidadeDeQuartos { get; set; }
         private List<Morador> Moradores { get; set; }
 
         public Moradia(string endereco, int cep, double tamanhoEmMetros, int quantidadeDeBanheiros, int quantidadeDeQuartos)
         {
-            SetEndereco(endereco);
-            SetCep(cep);
-            SetTamanhoEmMetros(tamanhoEmMetros);
-            SetQuantidadeDeBanheiros(quantidadeDeBanheiros);
-            SetQuantidadeDeQuartos(quantidadeDeQuartos);
-            SetMoradores(new List<Morador>());
+            Endereco = endereco;
+            Cep = cep;
+            TamanhoEmMetros = tamanhoEmMetros;
+            QuantidadeDeBanheiros = quantidadeDeBanheiros;
+            QuantidadeDeQuartos = quantidadeDeQuartos;
+            Moradores = new List<Morador>();
         }
 
         public void SetEndereco(string endereco)
