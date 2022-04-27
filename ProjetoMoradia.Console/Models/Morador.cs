@@ -35,7 +35,9 @@ namespace ProjetoMoradia.Models
 
         public void SetDataNascimento(string dataNascimento)
         {
-            DataNascimento = DateTime.Parse(dataNascimento);
+            var dataNascimentoDatetime = DateTime.Parse(dataNascimento);
+          
+            DataNascimento = dataNascimentoDatetime;
         }
 
         public DateTime GetDataDeNascimento()
