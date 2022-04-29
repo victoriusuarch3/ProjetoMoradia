@@ -29,4 +29,11 @@ public class MoradorTest
 
         Assert.Equal(dataNascimento, dataNascimentoAtual);
     }
+    
+    [Fact]
+    public void SalvarNomeMorador()
+    {
+        var morador = new Morador("Victor", "5554443331", "25/03/1999");
+        Assert.Equal("Victor", morador.GetNome());
+    }
 }
