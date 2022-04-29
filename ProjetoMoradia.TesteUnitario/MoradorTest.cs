@@ -11,6 +11,7 @@ public class MoradorTest
     {
         //Preparando - Arrange
         var dataNascimentoEsperada = "04/04/2004";
+        var nome = "Alan Sampaio";
         var morador = new Morador("Giovanni", "44455566678", dataNascimentoEsperada);
         //DataNascimento - Act
         var dataNascimento = morador.GetDataDeNascimento();
@@ -21,11 +22,11 @@ public class MoradorTest
     public void MoradorNaoDeveTerDataNascimentoMaiorQueADataAtual()
     {
         //Preparando - Arrange
-        var dataNascimento = "04/04/2023";
+        var dataNascimento = "28/04/2022";
         var morador = new Morador("Giovanni", "44455566678", dataNascimento);
         //DataNascimento - Act
-        var dataNascimentoAtual = morador.GetDataDeNascimento();
+        var dataNascimentoAtual = morador.GetDataDeNascimento().ToString("dd/MM/yyyy");
 
-        Assert.Equal(DateTime.MinValue, dataNascimentoAtual);
+        Assert.Equal(dataNascimento, dataNascimentoAtual);
     }
 }

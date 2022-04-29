@@ -36,8 +36,14 @@ namespace ProjetoMoradia.Models
         public void SetDataNascimento(string dataNascimento)
         {
             var dataNascimentoDatetime = DateTime.Parse(dataNascimento);
-          
+          if (dataNascimentoDatetime.CompareTo(DateTime.Now) < 1)
+          {
             DataNascimento = dataNascimentoDatetime;
+          }
+          else
+          {
+            DataNascimento = DateTime.MinValue;  
+          }         
         }
 
         public DateTime GetDataDeNascimento()
